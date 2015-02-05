@@ -1,16 +1,71 @@
 ---
 title: "Blocks presentation"
 layout: reveal
-theme: black
+theme: night
 ---
 
-## Slide 2
-
-This is the second slide. And it's just another file inside the _posts-directory.
-
-It is identified as slide 2, because it has a "2" after the mandatory date-part (1-1-1) in its
-filename. (It's called 1-1-1-2-slides.md)
+# Blocks
 
 ---
 
-This is a third slide, although we're still in 1-1-1-2-slides.md.
+## Why?
+
+### Non-feedforward neural networks!
+
+---
+
+## So what does it do?
+
+---
+
+## Modelling
+
+* Help construct Theano computation graph
+* Annotate graph
+* Easily access and filter variables
+
+---
+
+## Training
+
+* Training progress serialization and resumption
+* Per batch and validation set monitoring
+* Dataset interfaces with (chained) iterators
+* Live plotting
+
+---
+
+## Blocks ≠ Pylearn3
+
+---
+
+## Pylearn2 is a *“machine learning library”*
+
+## Blocks is a *“Theano toolkit”*
+
+---
+
+## &lt;i class="fa fa-exclamation-triangle fa-5x"&gt;&lt;/i&gt;
+
+## Warning: Beta status
+
+---
+
+## In *Blocks* you build with *Bricks*
+
+```python
+class Linear(Initializable, Feedforward):
+    ...
+    def apply(self, input_):
+        W, b = self.params
+        output = tensor.dot(input_, W)
+        if self.use_bias:
+            output += b
+        return output
+
+x = tensor.matrix()
+linear = Linear(input_dim=100, output_dim=50)
+y = linear.apply(x)
+```
+
+---

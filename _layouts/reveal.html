@@ -9,11 +9,12 @@
   <link rel="stylesheet" href="{{ site.baseurl }}{{ site.reveal.path }}/css/reveal.css">
   <link rel="stylesheet" href="{{ site.baseurl }}{{ site.reveal.path }}/css/theme/{{ page.theme }}.css" id="theme">
   <link rel="stylesheet" href="{{ site.baseurl }}{{ site.reveal.path }}/lib/css/zenburn.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? '{{ site.reveal.path }}/css/print/pdf.css' : '{{ site.reveal.path }}css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '{{ site.reveal.path }}/css/print/pdf.css' : '{{ site.reveal.path }}/css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
@@ -40,7 +41,7 @@
           { src: '{{ site.baseurl }}{{ site.reveal.path }}/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
           { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/highlight/highlight.js', async: true, condition: function() { return true; }, callback: function() { hljs.initHighlightingOnLoad(); } },
         ]
       });
     </script>
