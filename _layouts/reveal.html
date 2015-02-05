@@ -23,9 +23,16 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section data-markdown data-separator="^\n---\n$">
-          {{ content }}
-        </section>
+        {% assign slides = content | split:"---" %}
+        {% for slide in slides offset: 1 %}
+          {% assign lines = slide | newline_to_br | split:"<br />" %}
+          {% assign slide_data = lines[1] | strip_newlines %}
+            {% capture slide_content %}{% for line in lines offset: 2 %}
+{{ line | strip_newlines }}{% endfor %}{% endcapture %}
+          <section {{ slide_data }}>
+            {{ slide_content | markdownify }}
+          </section>
+        {% endfor %}
       </div>
     </div>
     <script src="{{ site.baseurl }}{{ site.reveal.path }}/lib/js/head.min.js"></script>

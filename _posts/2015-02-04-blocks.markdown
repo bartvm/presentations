@@ -4,6 +4,8 @@ layout: reveal
 theme: night
 ---
 
+---
+
 # Blocks
 
 ---
@@ -39,13 +41,14 @@ theme: night
 
 ---
 
-## Pylearn2 is a *“machine learning library”*
+## Pylearn2 is a *"machine learning library"*
 
-## Blocks is a *“Theano toolkit”*
+## Blocks is a *"Theano toolkit"*
 
 ---
+data-background-color="#fa0", data-background-transition="zoom"
 
-## &lt;i class="fa fa-exclamation-triangle fa-5x"&gt;&lt;/i&gt;
+## <i class="fa fa-exclamation-triangle fa-5x"></i>
 
 ## Warning: Beta status
 
@@ -53,7 +56,7 @@ theme: night
 
 ## In *Blocks* you build with *Bricks*
 
-```python
+~~~
 class Linear(Initializable, Feedforward):
     ...
     def apply(self, input_):
@@ -66,6 +69,4 @@ class Linear(Initializable, Feedforward):
 x = tensor.matrix()
 linear = Linear(input_dim=100, output_dim=50)
 y = linear.apply(x)
-```
-
----
+~~~
