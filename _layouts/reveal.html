@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="{{ site.baseurl }}{{ site.reveal.path }}/css/reveal.css">
+  <link rel="stylesheet" href="{{ site.baseurl }}{{ site.reveal.path }}/css/theme/{{ page.theme }}.css" id="theme">
+  <link rel="stylesheet" href="{{ site.baseurl }}{{ site.reveal.path }}/lib/css/zenburn.css">
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? '{{ site.reveal.path }}/css/print/pdf.css' : '{{ site.reveal.path }}css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+    <script src="{{ site.reveal.path }}lib/js/html5shiv.js"></script>
+  <![endif]-->
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section data-markdown data-separator="^\n---\n$">
+          {{ content }}
+        </section>
+      </div>
+    </div>
+    <script src="{{ site.baseurl }}{{ site.reveal.path }}/lib/js/head.min.js"></script>
+    <script src="{{ site.baseurl }}{{ site.reveal.path }}/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        controls: false,
+        progress: true,
+        history: true,
+        center: true,
+        transition: '{{ site.reveal.transition }}',
+        dependencies: [
+          { src: '{{ site.baseurl }}{{ site.reveal.path }}/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        ]
+      });
+    </script>
+  </body>
+</html>

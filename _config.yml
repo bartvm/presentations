@@ -1,0 +1,8 @@
+title: Presentation
+baseurl: ""
+
+markdown_ext: ignoreme
+reveal:
+  path: "/reveal.js"
+  theme: black
+  transition: slide
