@@ -4,5 +4,5 @@ baseurl: "/presentations"
 markdown_ext: ignoreme
 reveal:
   path: "/reveal.js"
-  theme: black
+  theme: night
   transition: slide

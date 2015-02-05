@@ -7,7 +7,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
   <link rel="stylesheet" href="{{ site.baseurl }}{{ site.reveal.path }}/css/reveal.css">
-  <link rel="stylesheet" href="{{ site.baseurl }}{{ site.reveal.path }}/css/theme/{{ page.theme }}.css" id="theme">
+  <link rel="stylesheet" href="{{ site.baseurl }}{{ site.reveal.path }}/css/theme/{% if page.theme %}{{ page.theme }}{% else %}{{ site.reveal.theme }}{% endif %}.css" id="theme">
   <link rel="stylesheet" href="{{ site.baseurl }}{{ site.reveal.path }}/lib/css/zenburn.css">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <script>
@@ -43,7 +43,7 @@
         progress: true,
         history: true,
         center: true,
-        transition: '{{ site.reveal.transition }}',
+        transition: '{% if page.transition %}{{ page.transition }}{% else %}{{ site.reveal.transition }}{% endif %}',
         dependencies: [
           { src: '{{ site.baseurl }}{{ site.reveal.path }}/lib/js/classList.js', condition: function() { return !document.body.classList; } },
           { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },

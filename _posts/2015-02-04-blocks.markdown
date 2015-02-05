@@ -1,7 +1,6 @@
 ---
 title: "Blocks presentation"
 layout: reveal
-theme: night
 ---
 
 ---
