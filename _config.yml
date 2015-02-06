@@ -1,8 +1,20 @@
 title: Presentation
-baseurl: "/presentations"
+baseurl: ""
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: reveal
 
-markdown_ext: ignoreme
 reveal:
   path: "/reveal.js"
-  theme: night
-  transition: slide
+  theme: black
+  plugins:
+    - highlight
+  settings:
+    controls: false
+    progress: true
+    history: true
+    center: true
+    transition: slide

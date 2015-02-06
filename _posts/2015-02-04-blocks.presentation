@@ -1,8 +1,9 @@
 ---
 title: "Blocks presentation"
-layout: reveal
+theme: night
+plugins:
+  - highlight
 ---
-
 ---
 
 # Blocks

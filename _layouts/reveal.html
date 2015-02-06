@@ -27,8 +27,7 @@
         {% for slide in slides offset: 1 %}
           {% assign lines = slide | newline_to_br | split:"<br />" %}
           {% assign slide_data = lines[1] | strip_newlines %}
-            {% capture slide_content %}{% for line in lines offset: 2 %}
-{{ line | strip_newlines }}{% endfor %}{% endcapture %}
+            {% capture slide_content %}{% for line in lines offset: 2 %}{{ line }}{% endfor %}{% endcapture %}
           <section {{ slide_data }}>
             {{ slide_content | markdownify }}
           </section>
@@ -38,19 +37,28 @@
     <script src="{{ site.baseurl }}{{ site.reveal.path }}/lib/js/head.min.js"></script>
     <script src="{{ site.baseurl }}{{ site.reveal.path }}/js/reveal.js"></script>
     <script>
-      Reveal.initialize({
-        controls: false,
-        progress: true,
-        history: true,
-        center: true,
-        transition: '{% if page.transition %}{{ page.transition }}{% else %}{{ site.reveal.transition }}{% endif %}',
-        dependencies: [
-          { src: '{{ site.baseurl }}{{ site.reveal.path }}/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      var settings = {{ site.reveal.settings | jsonify }};
+      var page_settings = {{ page.settings | jsonify }};
+      for (var attr in page_settings) { settings[attr] = page_settings[attr]; }
+      settings['dependencies'] = [
+        { src: '{{ site.baseurl }}{{ site.reveal.path }}/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+        {% if site.reveal.plugins contains 'highlight' or page.plugins contains 'highlight' %}
           { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/highlight/highlight.js', async: true, condition: function() { return true; }, callback: function() { hljs.initHighlightingOnLoad(); } },
-        ]
-      });
+        {% endif %}
+        {% if site.reveal.plugins contains 'math' or page.plugins contains 'math' %}
+          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/math/math.js', async: true },
+        {% endif %}
+        {% if site.reveal.plugins contains 'remotes' or page.plugins contains 'remotes' %}
+          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/remotes/remotes.js', async: true },
+        {% endif %}
+        {% if site.reveal.plugins contains 'notes' or page.plugins contains 'notes' %}
+          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/notes/notes.js', async: true },
+        {% endif %}
+        {% if site.reveal.plugins contains 'zoom-js' or page.plugins contains 'zoom-js' %}
+          { src: '{{ site.baseurl }}{{ site.reveal.path }}/plugin/zoom-js/zoom.js', async: true },
+        {% endif %}
+      ];
+      Reveal.initialize(settings);
     </script>
   </body>
 </html>
