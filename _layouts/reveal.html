@@ -27,7 +27,7 @@
         {% for slide in slides offset: 1 %}
           {% assign lines = slide | newline_to_br | split:"<br />" %}
           {% assign slide_data = lines[1] | strip_newlines %}
-            {% capture slide_content %}{% for line in lines offset: 2 %}{{ line }}{% endfor %}{% endcapture %}
+          {% capture slide_content %}{% for line in lines offset: 2 %}{{ line }}{% endfor %}{% endcapture %}
           <section {{ slide_data }}>
             {{ slide_content | markdownify }}
           </section>
