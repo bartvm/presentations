@@ -1,6 +1,6 @@
 ---
 title: "Blocks presentation"
-theme: night
+theme: white
 plugins:
   - highlight
 ---
@@ -70,3 +70,29 @@ x = tensor.matrix()
 linear = Linear(input_dim=100, output_dim=50)
 y = linear.apply(x)
 ~~~
+{: .python}
+
+---
+
+## Bricks manage their parameters
+
+~~~
+linear.weights_init = IsotropicGaussian(0.01)
+linear.initialize()
+~~~
+{: .python}
+
+---
+
+## Bricks annotate the computation graph
+
+~~~
+>>> cg = ComputationGraph(y)
+>>> VariableFilter(roles=[PARAMETERS])(cg.variables)
+[W, b]
+>>> VariableFilter(roles=[WEIGHTS])(cg.variables)
+[W]
+>>> VariableFilter(roles=[AUXILIARY])(cg.variables)
+[W_norm]
+~~~
+{: .python}

@@ -1,12 +1,14 @@
 title: Presentation
-baseurl: "/presentations"
+baseurl: ""
+markdown: kramdown
 defaults:
   -
     scope:
       path: ""
     values:
       layout: reveal
-
+highlight:
+  path: "/highlight.js"
 reveal:
   path: "/reveal.js"
   theme: black
