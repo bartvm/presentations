@@ -8,91 +8,66 @@ plugins:
 
 # Blocks
 
+[bartvm.github.io/presentations](http://bartvm.github.io/presentations)
+
 ---
 
 ## Why?
 
-### Non-feedforward neural networks!
+* Non-feedforward neural networks
+* Lightweight framework
 
 ---
 
-## So what does it do?
+## What?
+
+* Quick prototyping
+* Toolkit to help you build, manage and train (complex) Theano models
 
 ---
 
-## Modelling
+## For who?
 
-* Help construct Theano computation graph
-* Annotate graph
-* Easily access and filter variables
-
----
-
-## Training
-
-* Training progress serialization and resumption
-* Per batch and validation set monitoring
-* Dataset interfaces with (chained) iterators
-* Live plotting
+* Researchers
+* Familiarity with Python and Theano assumed
 
 ---
 
-## Blocks ≠ Pylearn3
+## Philosophy
 
----
-
-## Pylearn2 is a *"machine learning library"*
-
-## Blocks is a *"Theano toolkit"*
+* Extend Theano, don't abstract it
+* Highly modular (but really)
+* Focus on a lightweight core to stay maintainable
 
 ---
 data-background-color="#fa0", data-background-transition="zoom"
 
-## <i class="fa fa-exclamation-triangle fa-5x"></i>
-
 ## Warning: Beta status
 
----
+## <i class="fa fa-exclamation-triangle fa-5x"></i>
 
-## In *Blocks* you build with *Bricks*
-
-~~~
-class Linear(Initializable, Feedforward):
-    ...
-    def apply(self, input_):
-        W, b = self.params
-        output = tensor.dot(input_, W)
-        if self.use_bias:
-            output += b
-        return output
-
-x = tensor.matrix()
-linear = Linear(input_dim=100, output_dim=50)
-y = linear.apply(x)
-~~~
-{: .python}
+# IPython demo
 
 ---
 
-## Bricks manage their parameters
+## Bits and pieces
 
-~~~
-linear.weights_init = IsotropicGaussian(0.01)
-linear.initialize()
-~~~
-{: .python}
+* Seamless checkpointing and resumption
+* Fully PEP8 and PyFlakes compliant
+* Live plotting over network
+* Lean and mean (15x as small as Pylearn2)
+* GitHub trending repository last week
+* Over 90% covered by tests
+* Blocks ≠ Pylearn3
 
 ---
 
-## Bricks annotate the computation graph
+## Contribute
 
-~~~
->>> cg = ComputationGraph(y)
->>> VariableFilter(roles=[PARAMETERS])(cg.variables)
-[W, b]
->>> VariableFilter(roles=[WEIGHTS])(cg.variables)
-[W]
->>> VariableFilter(roles=[AUXILIARY])(cg.variables)
-[W_norm]
-~~~
-{: .python}
+* Use it and report bugs, give ideas, feedback, etc.
+* Contribute code to the core, or to `blocks-contrib`
+* Help clean up the documentation as you read it
+
+---
+
+# Questions?
