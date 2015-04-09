@@ -51,3 +51,11 @@ else {
 ---
 
 <img src="{{ site.baseurl}}/assets/pushpull.png" style="padding: 25px;">
+
+---
+
+# Bagging
+
+* Train 8 models with random hyperparameters
+* Use linear regression to determine the weights of the ensemble
+* Achieves 94.44% accuracy
