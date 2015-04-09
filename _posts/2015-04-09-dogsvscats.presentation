@@ -1,0 +1,50 @@
+---
+title: "Cats vs. Dogs"
+theme: white
+plugins:
+  - highlight
+---
+---
+
+# Cats vs. Dogs
+
+
+---
+
+## Baseline
+
+* Use Alexandre's model as a baseline
+* Achieves 92.48% test accuracy
+
+---
+
+## Performance bottleneck
+
+* Random crops alone take 38% of the time (~75 seconds per epoch)
+* With rotations, normalization, etc. this increases to 70-80%
+
+---
+
+## Multiprocessing
+
+* Technique used by several people in class
+* But it still takes ~37 seconds per epoch (19% of the time)
+* `Queue` uses multiple locks and semaphores for synchronization
+
+~~~
+if (PyDataType_FLAGCHK(PyArray_DESCR(self), NPY_LIST_PICKLE)) {
+    thestr = _getlist_pkl(self);
+}
+else {
+    thestr = PyArray_ToString(self, NPY_ANYORDER);
+}
+~~~
+{: .python}
+
+---
+
+## Asynchronous messaging over sockets
+
+* Use ØMQ
+
+---
