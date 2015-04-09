@@ -8,7 +8,6 @@ plugins:
 
 # Cats vs. Dogs
 
-
 ---
 
 ## Baseline
@@ -29,7 +28,7 @@ plugins:
 
 * Technique used by several people in class
 * But it still takes ~37 seconds per epoch (19% of the time)
-* `Queue` uses multiple locks and semaphores for synchronization
+* `multiprocessing.Queue` uses multiple locks and semaphores for synchronization
 
 ~~~
 if (PyDataType_FLAGCHK(PyArray_DESCR(self), NPY_LIST_PICKLE)) {
@@ -45,6 +44,12 @@ else {
 
 ## Asynchronous messaging over sockets
 
-* Use ØMQ
+* Use ØMQ over TCP sockets
+* Make use of NumPy's buffering interface
+* Reading time to ~2 seconds (1% of the time)
+
+---
+
+<img src="/assets/pushpull.png">
 
 ---
