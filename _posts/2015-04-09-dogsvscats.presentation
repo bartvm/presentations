@@ -50,6 +50,4 @@ else {
 
 ---
 
-<img src="{{ site.baseurl}}/assets/pushpull.png">
-
----
+<img src="{{ site.baseurl}}/assets/pushpull.png" style="padding: 25px;">
