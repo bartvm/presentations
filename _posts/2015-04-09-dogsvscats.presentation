@@ -42,7 +42,7 @@ else {
 
 ---
 
-## Asynchronous messaging over sockets
+## High-performance asynchronous messaging
 
 * Use ØMQ over TCP sockets
 * Make use of NumPy's buffering interface
@@ -50,6 +50,6 @@ else {
 
 ---
 
-<img src="/assets/pushpull.png">
+<img src="{{ site.baseurl}}/assets/pushpull.png">
 
 ---
