@@ -35,13 +35,16 @@ plugins:
 2. Find minimum
 3. Reduce kernel size and repeat
 
+Depends on $\sigma$-niceness/optimization complexity.
+
 See e.g. *A Theoretical Analysis of Optimization by Gaussian Continuation* by
-Mobahi and Fisher. Depends on $\sigma$-niceness/optimization complexity.
+Mobahi and Fisher.
 
 ---
 
 ## But we're in a stochastic regime
 
-* Use sampling to estimate smoothing, $\hat \nablaf_\theta(x) = \mathcal{E}_\epsilon(x + \epsilone)
+* Use sampling to estimate smoothing, $\hat \nabla f_\theta(x) = \mathbb{E}_\epsilon(x + \epsilon)$
+* Reduce smoothing gradually?
 
 ---
