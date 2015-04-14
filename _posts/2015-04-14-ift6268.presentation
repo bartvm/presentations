@@ -44,7 +44,7 @@ Mobahi and Fisher.
 
 ## Stochastic regime
 
-* Use sampling to estimate smoothing, $\hat \nabla f(x) = \mathbb{E}_\epsilon(x + \epsilon)$
+* Use sampling to estimate smoothing, $\hat \nabla f(x) = \mathbb{E}_\epsilon(\nabla f(x + \epsilon))$
 * Reduce smoothing gradually?
 
 See e.g. *On Graduated Optimization for Stochastic Non-Convex Problems* by
