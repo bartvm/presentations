@@ -39,3 +39,9 @@ See e.g. *A Theoretical Analysis of Optimization by Gaussian Continuation* by
 Mobahi and Fisher. Depends on $\sigma$-niceness/optimization complexity.
 
 ---
+
+## But we're in a stochastic regime
+
+* Use sampling to estimate smoothing, $\hat \nablaf_\theta(x) = \mathcal{E}_\epsilon(x + \epsilone)
+
+---
