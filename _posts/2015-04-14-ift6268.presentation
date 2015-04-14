@@ -13,11 +13,11 @@ plugins:
 
 ## SGD isn't perfect
 
-<img src="{{ site.baseurl}}/assets/mnist.png" style="padding: 25px; height: 300px;">
+<img src="{{ site.baseurl}}/assets/mnist.png" style="padding: 25px; height: 400px;">
 
 ---
 
-<img src="{{ site.baseurl}}/assets/cifar.png" style="padding: 25px; height: 300px;">
+<img src="{{ site.baseurl}}/assets/cifar.png" style="padding: 25px; height: 400px;">
 
 ---
 
@@ -25,7 +25,7 @@ plugins:
 
 * Rough parallel to simulated annealing
 
-<img src="{{ site.baseurl}}/assets/graduated.png" style="padding: 25px;">
+<img src="{{ site.baseurl}}/assets/graduated.png" style="padding: 25px; height: 400px;">
 
 ---
 
