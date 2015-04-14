@@ -42,9 +42,16 @@ Mobahi and Fisher.
 
 ---
 
-## But we're in a stochastic regime
+## Stochastic regime
 
 * Use sampling to estimate smoothing, $\hat \nabla f_\theta(x) = \mathbb{E}_\epsilon(x + \epsilon)$
 * Reduce smoothing gradually?
 
+See e.g. *On Graduated Optimization for Stochastic Non-Convex Problems* by
+Hazan, Levy, Shalev-Swartz
+
 ---
+
+## Potential issues
+
+* Number of samples needed for Monte Carlo estimate grows with dimension
