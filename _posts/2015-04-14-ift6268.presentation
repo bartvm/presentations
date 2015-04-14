@@ -13,10 +13,29 @@ plugins:
 
 ## SGD isn't perfect
 
-<img src="{{ site.baseurl}}/assets/mnist.png" style="padding: 25px;">
-<img src="{{ site.baseurl}}/assets/cifar.png" style="padding: 25px;">
+<img src="{{ site.baseurl}}/assets/mnist.png" style="padding: 25px; height: 300px;">
 
 ---
 
+<img src="{{ site.baseurl}}/assets/cifar.png" style="padding: 25px; height: 300px;">
+
+---
+
+## Continuation AKA graduated optimization
+
+* Rough parallel to simulated annealing
+
+<img src="{{ site.baseurl}}/assets/graduated.png" style="padding: 25px;">
+
+---
+
+## Analytic solution
+
+1. Convolve with e.g. a Gaussian kernel
+2. Find minimum
+3. Reduce kernel size and repeat
+
+See e.g. *A Theoretical Analysis of Optimization by Gaussian Continuation* by
+Mobahi and Fisher. Depends on $\sigma$-niceness/optimization complexity.
 
 ---
